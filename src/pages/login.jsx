@@ -1,21 +1,15 @@
 import { useState } from "react";
+
 function Login(){
-    const[username,setUsername]=useState("");
-    const[email,setEmail]=useState("");
-    const[password,setPassword]=useState("");
+      const[email, setEmail] = useState("");
+  const[password, setPassword] = useState("");
+  const formSubmit=(e)=>e.preventDefault();
 
+    console.log(email,password)
+    return(
+        /* <div className="text-blue-500">HI </div>
 
-function loginSubmit(e){
-    e.preventDefault();
- console.log("Username:",username);
- console.log("Email:",email);
- console.log("Password:",password);
-}
-
-return(
-    <div >
-        <h1>ProductReviews</h1>
-        <p>honest review for the products</p>
+        <input type="email" required placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} />
         <br></br>
 
         <form onSubmit={loginSubmit}>
