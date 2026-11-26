@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function Login(){
-      const[email, setEmail] = useState("");
+  const[email, setEmail] = useState("");
   const[password, setPassword] = useState("");
   const formSubmit=(e)=>e.preventDefault();
 
@@ -27,8 +27,9 @@ function Login(){
                 <br></br>
             <button type = "submit">Login</button>
         </form>
-    </div>
-
-);
+    </div>*/
+    )
 }
+
+
 export default Login;
