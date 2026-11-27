@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 function Login() {
 
@@ -8,23 +8,32 @@ function Login() {
 
     const navigate = useNavigate()
 
-    const[formdata,setFormdata] = useState({
+    const[logindata,setLogindata] = useState({
         username:"",
         password:""
     })
+    const location = useLocation()
+    const registerdata = location.state
 
     function handleChange(e){
         e.preventDefault();
-        setFormdata({
-            ...formdata,
+        setLogindata({
+            ...logindata,
             [e.target.name]:e.target.value
         })
     }
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        console.log(formdata)
-        navigate('/dashboard',{state:formdata})
+        if (logindata.username===registerdata.name && logindata.password===registerdata.password){
+             console.log("login pagedata",logindata)
+            console.log("register pagedata",registerdata)
+            navigate('/dashboard',{state:logindata})
+           
+        }else{
+            console.log("The credentials are wrong")
+
+        }
     }
 
     return (

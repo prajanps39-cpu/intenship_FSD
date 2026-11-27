@@ -10,7 +10,7 @@ function Dashboard(){
     }
     return(
         <div>
-            <h1>this content is from dashboard</h1>
+            <h1 className="text-green-500">this content is from dashboard</h1>
             <button onClick={displaydata}>button</button>
         </div>
     )

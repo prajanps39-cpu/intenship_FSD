@@ -12,6 +12,10 @@ import {
   Route,
 } from "react-router-dom";
 import Register from './pages/register'
+import Adminlayout from './pages/admin/adminlayout'
+import Adminsettings from './pages/admin/adminsettings'
+import Admindashboard from './pages/admin/admindashboard'
+import Adminuserdetails from './pages/admin/adminuserdetail'
 function App() {
   
   
@@ -28,6 +32,11 @@ function App() {
       <Route path='/settings' element={<Settings/>}/>
       <Route path='/team' element={<Team/>}/> 
       <Route path="/register" element={<Register/>}/>
+      <Route path='/admin' element={<Adminlayout/>}>
+        <Route path='admindashboard' element={<Admindashboard/>}/>
+        <Route path='adminsettings' element={<Adminsettings/>}/>
+        <Route path='adminuserdetail' element={<Adminuserdetails/>}/>
+      </Route>
       </Routes>
     </BrowserRouter>
   
